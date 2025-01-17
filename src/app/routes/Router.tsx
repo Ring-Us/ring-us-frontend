@@ -1,7 +1,7 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import LandingPage from "../pages/LandingPage";
-import Login from "../pages/Login";
-import Signup from "../pages/Signup";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import LandingPage from '@/auth/pages/LandingPage';
+import Login from '@/auth/pages/Login';
+import Signup from '@/auth/pages/Signup';
 
 export default function AppRouter() {
   return (

@@ -1,8 +1,8 @@
-import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { Button } from "../../components/ui/Button";
-import Logo from "../../assets/logo.png";
-import MenuIcon from "../../assets/menu.svg";
+import { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { Button } from '../../global/ui/Button';
+import Logo from '../../assets/logo.png';
+import MenuIcon from '../../assets/menu.svg';
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -43,7 +43,7 @@ export const Header = () => {
               로그인
             </Link>
             <Button
-              onClick={() => navigate("/signup")}
+              onClick={() => navigate('/signup')}
               className="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-xl"
             >
               회원가입
