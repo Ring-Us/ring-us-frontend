@@ -1,0 +1,20 @@
+name: Discord Comment Notification
+
+on:
+  issue_comment:
+    types: [created] # 새 댓글이 생성될 때 트리거
+
+jobs:
+  notify-discord:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Send Discord Notification
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: |
+          curl -X POST -H "Content-Type: application/json" \
+          -d '{
+                "content": "**New comment on issue/pr:** <${{ github.event.issue.html_url }}>\n**User:** `${{ github.event.comment.user.login }}`\n**Comment:** `${{ github.event.comment.body }}`"
+              }' \
+          $DISCORD_WEBHOOK_URL
