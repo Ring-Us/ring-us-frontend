@@ -26,7 +26,18 @@ import tseslint from 'typescript-eslint';
 export default tseslint.config(
   // 기본 설정 옵션
   {
-    ignores: ['dist'], // 배포 디렉터리(dist) 제외
+    ignores: [
+      "dist",
+      ".storybook",
+      "**/*.test.ts",
+      "**/*.test.tsx",
+      "**/*.story.{ts|tsx}",
+      "**/*.stories.{ts|tsx}",
+      "**/*.config.{ts|tsx}",
+      "**/*.config.js",
+      "**/*.config.mjs",
+      "**/*.config.cjs",
+  ],
   },
   {
     // 확장 규칙 설정
