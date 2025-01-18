@@ -1,4 +1,4 @@
-import { Button } from "../../components/ui/Button";
+import { Button } from '../../global/ui/Button';
 
 export const Hero = () => {
   return (
