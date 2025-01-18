@@ -1,16 +1,24 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import LandingPage from '@/auth/pages/LandingPage';
-import Login from '@/auth/pages/Login';
-import Signup from '@/auth/pages/Signup';
+import { Routes, Route } from 'react-router-dom';
 
-export default function AppRouter() {
+import { RootLayout } from '@/global/layouts/RootLayout';
+import { AuthLayout } from '@/auth/layouts/AuthLayout';
+
+import HomePage from '@/home/pages/HomePage';
+import LandingPage from '@/auth/pages/LandingPage';
+import SignInPage from '@/auth/pages/SignInPage';
+import SignUpPage from '@/auth/pages/SignUpPage';
+
+export const Router = () => {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<LandingPage />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
-      </Routes>
-    </Router>
+    <Routes>
+      <Route path="/" element={<RootLayout />}>
+        <Route path="" element={<HomePage />} />
+      </Route>
+      <Route path="/auth" element={<AuthLayout />}>
+        <Route path="" element={<LandingPage />} />
+        <Route path="signin" element={<SignInPage />} />
+        <Route path="signup" element={<SignUpPage />} />
+      </Route>
+    </Routes>
   );
-}
+};
