@@ -2,22 +2,54 @@
 export default {
   content: ["./src/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    theme: {
-      colors: {
-        transparent: 'transparent',
-        current: 'currentColor',
-        white: '#ffffff',
-        black: '#000000',
-        red: '#E70000',
-        green: '#00AF49',
-        primary: '#310EE0',
-        secondary: '#7e5bef',
-        // 추가적인 색상 정의
+    borderRadius: {
+      lg: '14px',
+      md: '10px',
+      sm: '6px',
+    },
+    colors: {
+      background: 'hsl(var(--background))',
+      foreground: 'hsl(var(--foreground))',
+      card: {
+        DEFAULT: 'hsl(var(--card))',
+        foreground: 'hsl(var(--card-foreground))',
       },
-      borderRadius: {
-        lg: '14px',
-        md: '10px',  // 10px - 2px
-        sm: '6px',  // 10px - 4px
+      popover: {
+        DEFAULT: 'hsl(var(--popover))',
+        foreground: 'hsl(var(--popover-foreground))',
+      },
+      muted: {
+        DEFAULT: 'hsl(var(--muted))',
+        foreground: 'hsl(var(--muted-foreground))',
+      },
+      accent: {
+        DEFAULT: 'hsl(var(--accent))',
+        foreground: 'hsl(var(--accent-foreground))',
+      },
+      destructive: {
+        DEFAULT: 'hsl(var(--destructive))',
+        foreground: 'hsl(var(--destructive-foreground))',
+      },
+      border: 'hsl(var(--border))',
+      input: 'hsl(var(--input))',
+      ring: 'hsl(var(--ring))',
+      chart: {
+        1: 'hsl(var(--chart-1))',
+        2: 'hsl(var(--chart-2))',
+        3: 'hsl(var(--chart-3))',
+        4: 'hsl(var(--chart-4))',
+        5: 'hsl(var(--chart-5))',
+      },
+      gray: {
+        1: '#65636E',
+        2: '#94939B',
+        3: '#D9D7E0',
+      },
+      authGreen: '#00943E',
+      authRed: '#E70000',
+      primary: {
+        1: '#310EE0',
+        2: '#AEA0F8',
       },
     },
   },
