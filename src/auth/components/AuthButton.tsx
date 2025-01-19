@@ -1,4 +1,4 @@
-import { Button, Input } from '@/global/ui';
+import { Button } from '@/global/ui';
 
 const variantClasses = {
   default: 'bg-primary-1',
@@ -13,7 +13,7 @@ interface ButtonProps {
 export function AuthButton({ variant = 'default', children }: ButtonProps) {
   return (
     <Button
-      className={`${variantClasses[variant]} w-full h-[55px] rounded-md font-semiBold text-[16px] font-white`}
+      className={`${variantClasses[variant]} w-full h-[55px] rounded-md font-semiBold text-[16px] font-white hover:bg-primary-1`}
     >
       {children}
     </Button>
