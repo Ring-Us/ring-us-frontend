@@ -1,4 +1,4 @@
-import { Button } from '../../global/ui/button';
+import { Button, Input } from '@/global/ui';
 
 const variantClasses = {
   default: 'bg-primary-1',
