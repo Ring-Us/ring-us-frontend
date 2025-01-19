@@ -6,7 +6,7 @@ export default function HomePage() {
     <div className="min-h-screen flex flex-col">
       <h1 className="text-4xl font-bold text-center">Home Page</h1>
       <AuthButton>다음으로</AuthButton>
-      <Progress value={33} />
+      <Progress value={33} className="mt-4 rounded-md" />
       <div className="flex flex-col gap-[12px]">
         <label htmlFor="birth" className="font-regular text-[14px]">
           생년월일
