@@ -1,0 +1,9 @@
+.slick-dots li button:before {
+  font-size: 11px; /* 기본 폰트 크기 */
+  color: gray; /* 기본 색상 */
+  opacity: 0.5; /* 기본 불투명도 */
+}
+
+.slick-dots li.slick-active button:before {
+  opacity: 1; /* 활성화된 dot 불투명도 */
+}
