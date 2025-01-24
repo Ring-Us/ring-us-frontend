@@ -40,7 +40,31 @@ export default function SigninPage() {
         />
 
         {/* 로그인 버튼 */}
-        <AuthButton onClick={() => navigate('/dashboard')}>로그인</AuthButton>
+        <div className="mt-6">
+          <AuthButton variant="default" onClick={() => navigate('/')}>
+            로그인
+          </AuthButton>
+        </div>
+
+        {/* 비밀번호 찾기와 회원가입 */}
+        <div className="flex justify-end mt-4 text-[14px] text-gray-2">
+          <button
+            className="hover:underline"
+            onClick={() => navigate('/auth/forgot-password')}
+          >
+            비밀번호 찾기
+          </button>
+        </div>
+
+        <div className="text-center mt-6 text-[14px] text-gray-2">
+          아직 링어스 회원이 아니라면?{'  '}
+          <button
+            className="text-primary-1 font-medium hover:underline"
+            onClick={() => navigate('/auth/signup')}
+          >
+            회원가입
+          </button>
+        </div>
       </div>
     </div>
   );

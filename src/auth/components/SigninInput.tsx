@@ -1,4 +1,4 @@
-import { Mail, Lock, User } from 'lucide-react';
+import { Lock, User } from 'lucide-react';
 
 interface SigninInputProps {
   type: 'text' | 'password' | 'email';
