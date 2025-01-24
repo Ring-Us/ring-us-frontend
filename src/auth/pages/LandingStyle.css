@@ -7,3 +7,33 @@
 .slick-dots li.slick-active button:before {
   opacity: 1; /* 활성화된 dot 불투명도 */
 }
+
+@media (min-width: 320px) {
+  .slick-track {
+    height: calc(100vh - 50vh);
+  }
+}
+
+@media (min-width: 350px) {
+  .slick-track {
+    height: calc(100vh - 45vh);
+  }
+}
+
+@media (min-width: 420px) {
+  .slick-track {
+    height: calc(100vh - 40vh);
+  }
+}
+
+@media (min-width: 520px) {
+  .slick-track {
+    height: calc(100vh - 35vh);
+  }
+}
+
+@media (min-width: 2000px) {
+  .slick-track {
+    height: calc(100vh - 50vh);
+  }
+}

@@ -1,9 +1,9 @@
 const Slide4 = () => {
   return (
-    <div className="h-full-screen  flex flex-col items-center justify-between text-center px-4 mb-8">
+    <div className="h-auto flex-col items-center justify-center text-center px-4">
       {/* 텍스트 영역 */}
-      <div className="h-[100px] flex flex-col items-center mb-10">
-        <h1 className="text-3xl font-bold text-gray-900 mb-4">
+      <div className="h-[calc(100vh-85vh)] flex flex-col items-center mb-6">
+        <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
           내일을 위한 연결
           <span className="text-primary-1">
             <br /> 오늘 링어스에서 시작
@@ -15,7 +15,7 @@ const Slide4 = () => {
       </div>
 
       {/* 이미지 영역 */}
-      <div className="w-full h-[360px]">
+      <div className="w-full h-auto">
         <img
           src="/src/assets/product-image.png"
           alt="Slide 1"
