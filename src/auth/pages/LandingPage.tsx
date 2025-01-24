@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -7,9 +8,11 @@ import Slide1 from '../components/landing/Slide1';
 import Slide2 from '../components/landing/Slide2';
 import Slide3 from '../components/landing/Slide3';
 import Slide4 from '../components/landing/Slide4';
+import { AuthButton } from '@/auth/components/AuthButton';
 
 export default function LandingPage() {
-  const navigate = useNavigate(); // useNavigate 훅 사용
+  const navigate = useNavigate();
+  const [currentSlide, setCurrentSlide] = useState(0);
 
   const settings = {
     dots: true,
@@ -17,18 +20,17 @@ export default function LandingPage() {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-
+    beforeChange: (current: number, next: number) => setCurrentSlide(next),
     appendDots: (dots: any) => (
-      <div className="absolute">
-        <ul className="h-[60px] max-420:h-[170px]">{dots}</ul>
+      <div className="absolute w-full">
+        <ul className="relative bottom">{dots}</ul>
       </div>
     ),
   };
 
   return (
     <div className="min-h-screen relative flex items-center justify-center">
-      {/* 슬라이더 중앙 배치 */}
-      <div className="w-full max-w-[600px] px-2">
+      <div className="w-full max-w-[600px] h-[calc(100vh-30vh)] px-2">
         <Slider {...settings}>
           <Slide1 />
           <Slide2 />
@@ -37,13 +39,23 @@ export default function LandingPage() {
         </Slider>
       </div>
 
-      {/* 건너뛰기 버튼 오른쪽 하단 배치 */}
-      <button
-        className="absolute bottom-5 right-5 text-sm text-gray-500 hover:underline"
-        onClick={() => navigate('/auth/signin')} // 버튼 클릭 시 /signin으로 이동
-      >
-        건너뛰기
-      </button>
+      {currentSlide !== 3 ? (
+        <button
+          className="absolute bottom-10 right-10 text-sm text-gray-500 hover:underline"
+          onClick={() => navigate('/auth/signin')}
+        >
+          건너뛰기
+        </button>
+      ) : (
+        <div className="absolute bottom-14 left-5 right-5">
+          <AuthButton
+            variant="default"
+            onClick={() => navigate('/auth/signup')}
+          >
+            지금 시작하기
+          </AuthButton>
+        </div>
+      )}
     </div>
   );
 }
