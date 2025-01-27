@@ -45,6 +45,7 @@ export default {
 		  '1': '#65636E',
 		  '2': '#94939B',
 		  '3': '#D9D7E0',
+		  '4': '#F5F5F7',
 		},
 		authGreen: '#00943E',
 		authRed: '#E70000',
