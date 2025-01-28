@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { AuthButton } from '@/auth/components/AuthButton';
 import Checkbox from '@/auth/components/Checkbox';
 
@@ -35,8 +34,6 @@ const UsagePolicy = ({ onNext }: { onNext: () => void }) => {
       checkedItems.terms && checkedItems.privacy && checkedItems.marketing,
     );
   }, [checkedItems]);
-
-  const navigate = useNavigate();
 
   return (
     <div className="relative flex flex-col w-full">
