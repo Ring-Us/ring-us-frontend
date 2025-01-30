@@ -7,6 +7,7 @@ import HomePage from '@/home/pages/HomePage';
 import LandingPage from '@/auth/pages/LandingPage';
 import SignInPage from '@/auth/pages/SignInPage';
 import SignUpPage from '@/auth/pages/SignUpPage';
+import SignupFinish from '@/auth/components/signup/SignupFinish';
 
 export const Router = () => {
   return (
@@ -18,6 +19,7 @@ export const Router = () => {
         <Route path="" element={<LandingPage />} />
         <Route path="signin" element={<SignInPage />} />
         <Route path="signup" element={<SignUpPage />} />
+        <Route path="finish" element={<SignupFinish />} />
       </Route>
     </Routes>
   );

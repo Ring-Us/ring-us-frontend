@@ -20,6 +20,7 @@ export function AuthButton({
     <Button
       className={`${variantClasses[variant]} w-full h-[55px] rounded-lg font-semiBold text-[16px] font-white hover:bg-primary-1`}
       onClick={onClick} // 전달된 onClick 핸들러 적용
+      disabled={variant === 'secondary'}
     >
       {children}
     </Button>
