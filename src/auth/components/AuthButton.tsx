@@ -8,19 +8,21 @@ const variantClasses = {
 interface ButtonProps {
   variant?: 'default' | 'secondary';
   children: React.ReactNode;
-  onClick?: () => void; // onClick 속성 추가
+  onClick?: () => void;
+  disabled?: boolean; // ✅ disabled 추가
 }
 
 export function AuthButton({
   variant = 'default',
   children,
   onClick,
+  disabled = false, // 기본값 false
 }: ButtonProps) {
   return (
     <Button
       className={`${variantClasses[variant]} w-full h-[55px] rounded-lg font-semiBold text-[16px] font-white hover:bg-primary-1`}
-      onClick={onClick} // 전달된 onClick 핸들러 적용
-      disabled={variant === 'secondary'}
+      onClick={!disabled ? onClick : undefined} // ✅ disabled 상태에서는 클릭 이벤트 실행 X
+      disabled={disabled} // ✅ disabled 명확하게 적용
     >
       {children}
     </Button>

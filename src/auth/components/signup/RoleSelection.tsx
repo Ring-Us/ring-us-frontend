@@ -65,6 +65,7 @@ const RoleSelection = ({
         <AuthButton
           onClick={() => onNext(selectedRole)}
           variant={selectedRole ? 'default' : 'secondary'} // 역할이 선택되었을 때만 활성화
+          disabled={!selectedRole}
         >
           다음으로
         </AuthButton>
