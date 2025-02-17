@@ -14,7 +14,7 @@ export default function SignUpPage() {
   const [currentSection, setCurrentSection] = useState(0);
   const [role, setRole] = useState<string | null>(null);
   const [email, setEmail] = useState<string>('');
-  const [password, setPassword] = useState<string | null>(null); // 🚨 수정 (null로 초기화)
+  const [password, setPassword] = useState<string | null>(null); // 수정 (null로 초기화)
   const [serviceTerms, setServiceTerms] = useState([
     { tag: 'TERMS_OF_SERVICE', agreed: false },
     { tag: 'PRIVACY_POLICY', agreed: false },
@@ -40,11 +40,9 @@ export default function SignUpPage() {
     if (password) {
       handleSignUp();
     }
-  }, [password]); // 🚨 password가 변경될 때 실행
+  }, [password]); // password가 변경될 때 실행
 
   const handleSignUp = async () => {
-    console.log('🔥 handleSignUp 실행됨, 현재 password:', password);
-
     if (!role || !password) {
       console.error('❌ 필수 정보 부족:', { role, email, password });
       return;
@@ -62,35 +60,14 @@ export default function SignUpPage() {
       serviceTerms: formattedServiceTerms,
     };
 
-    console.log('📡 백엔드로 전송할 데이터:', requestData);
-
     try {
       const response = await authApi(requestData);
-      console.log('서버 응답:', response);
-      alert('회원가입이 완료되었습니다.');
+      console.log('✅ 서버 응답:', response);
     } catch (error: any) {
       console.error('❌ 회원가입 오류 발생:', error.response?.data || error);
     }
 
-    // 회원가입 성공 여부와 상관없이 세션 확인 요청 실행
-    console.log('🔥 회원가입 후 세션 확인 요청 실행 전');
-    try {
-      const sessionResponse = await fetch('/api/protected-route', {
-        method: 'GET',
-        credentials: 'include',
-      });
-      console.log('🔥 회원가입 후 세션 확인 요청 실행 후');
-
-      if (sessionResponse.ok) {
-        console.log('✅ 세션 설정 완료:', sessionResponse);
-      } else {
-        console.error('❌ 세션 설정 실패:', sessionResponse);
-      }
-    } catch (sessionError) {
-      console.error('❌ 세션 요청 중 오류 발생:', sessionError);
-    }
-
-    handleNext();
+    handleNext(); // 회원가입 후 다음 단계로 이동
   };
 
   // 기본 회원가입 단계

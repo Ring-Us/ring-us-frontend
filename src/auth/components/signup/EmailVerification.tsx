@@ -53,37 +53,18 @@ const EmailVerification = ({ onNext }: { onNext: (email: string) => void }) => {
   };
 
   // 인증번호 검증 (버튼 클릭 시 실행)
-  // 인증번호 검증 (버튼 클릭 시 실행)
   const handleVerifyCode = async () => {
     if (!verificationCode) return;
 
     try {
-      console.log('📡 백엔드로 전송할 데이터:', { email, verificationCode });
-
       const response = await verifyCode(email, verificationCode); // 백엔드 요청
-      console.log('백엔드 응답:', response);
+      //console.log('백엔드 응답:', response);
 
       // 응답 상태에 따른 예외 처리
       if (response.status === 200 || response.status === 201) {
         setIsCodeVerified(true); // 인증 성공 시 버튼 활성화
         setCodeError(''); // 오류 메시지 초기화
         setSuccessMessage('✅ 인증이 성공하였습니다!');
-
-        // ✅ 세션 쿠키 요청 (인증 성공 후 실행)
-        try {
-          const sessionResponse = await fetch('/api/protected-route', {
-            method: 'GET',
-            credentials: 'include', // 쿠키 자동 포함
-          });
-
-          if (sessionResponse.ok) {
-            console.log('✅ 세션 설정 완료:', sessionResponse);
-          } else {
-            console.error('❌ 세션 설정 실패:', sessionResponse);
-          }
-        } catch (sessionError) {
-          console.error('❌ 세션 요청 중 오류 발생:', sessionError);
-        }
       } else {
         throw new Error(response.message || '인증번호가 올바르지 않습니다.');
       }
