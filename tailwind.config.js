@@ -46,6 +46,10 @@ export default {
 		  '2': '#94939B',
 		  '3': '#D9D7E0',
 		  '4': '#F5F5F7',
+		  '5': '#9095A0',
+		  '6': '#F2F2F6',
+		  '7': '#7E7D84',
+		  '8' : '#EBEDEF',
 		},
 		authGreen: '#00943E',
 		authRed: '#E70000',
@@ -107,5 +111,6 @@ export default {
 		},
 	  },
 	},
+	
 	plugins: [],
   };
