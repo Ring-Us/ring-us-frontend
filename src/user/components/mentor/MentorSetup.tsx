@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { AuthButton } from '@/auth/components/AuthButton';
-import FileUpload from '@/auth/components/FileUpload';
+import FileUpload from '@/user/components/FileUpload';
 import MentorProfile from '@/auth/components/signup/mentor/MentorProfile'; // 프로필 설정 컴포넌트 추가
 
 const MentorSetup = ({
